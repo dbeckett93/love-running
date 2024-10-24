@@ -1,22 +1,7 @@
-/* Google font import. Lato. */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
-/* Google font import. Oswald. */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-/* Lato font classes using only the 300 weight variants */
-.lato-light {
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-}
-
-.lato-light-italic {
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    font-style: italic;
-}
-
-/* Asterisk wildcard selector to ovveride default styles added by the browser */
+/* Asterisk wildcard selector to override default styles added by the browser */
 * {
     padding: 0;
     margin: 0;
@@ -29,8 +14,8 @@ body {
     display: flex;
     flex-direction: column;
     /* Generic project styles */
-    font-family: 'Lato', sans-serif;
     color: #3a3a3a;
+    font-family: 'Lato', sans-serif;
 }
 
 h1,
@@ -42,13 +27,9 @@ h3 {
     color: #252525;
 }
 
-.hidden-heading {
-    display: none;
-}
-
 /* Header */
 header {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 0 1rem;
     position: fixed;
     z-index: 99;
@@ -64,18 +45,57 @@ header a {
     color: inherit;
 }
 
-/* Main */
+#menu {
+    font-size: 110%;
+    letter-spacing: 4px;
+    list-style-type: none;
+}
+
+#menu>li {
+    margin-bottom: 1em;
+}
+
+.active {
+    border-bottom: 1px solid #3a3a3a;
+}
+
+/* Navbar styles with dropdown toggle */
+nav {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    left: 0;
+    padding: 0 1rem;
+    box-shadow: 0 2px 2px #3a3a3a;
+    display: none;
+    top: 100%;
+}
+
+/* Nav toggle */
+#nav-toggle:checked~nav {
+    display: block;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
+}
+
+/* Main content */
 main {
     /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
     margin-top: 47px;
 }
 
-/* Hero */
+/* Hero section */
 #hero {
     height: 600px;
     width: 100%;
-    background: url("/assets/images/hero-image.webp") no-repeat center center/cover;
+    background: url("../images/hero-image.webp") no-repeat center center/cover;
     position: relative;
 }
 
@@ -96,37 +116,22 @@ main {
     color: #ffffff;
 }
 
-/* Reasons */
-/* Main section */
+/* Reasons section */
 #reasons {
-    margin: 20px auto;
     width: 90%;
+    margin: 20px auto;
 }
 
 #reasons h2 {
-    font-size: 280%;
-    text-align: center;
     margin-bottom: 20px;
-}
-
-/* Benefits */
-#benefits-physical,
-#benefits-mental {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    text-align: center;
+    font-size: 280%;
 }
 
 #benefits-physical>div,
 #benefits-mental>div {
     line-height: 20px;
     margin-bottom: 20px;
-    width: 75%;
-}
-
-#benefits-mental>div {
-    text-align: end;
-    align-self: flex-end;
 }
 
 #benefits p {
@@ -138,16 +143,15 @@ main {
     margin: 5px 0;
 }
 
-/* Benefits image */
 #circle-cover-bg {
-    background: url("/assets/images/reasons-image.webp") no-repeat center center/cover;
+    background: url('../images/reasons-image.webp') no-repeat top center / cover;
     height: 90vw;
     width: 90vw;
-    max-width: 300px;
-    max-height: 300px;
     margin-bottom: 20px;
     /* Makes the square image into a circle */
     border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 #benefits-image {
@@ -156,30 +160,31 @@ main {
     justify-content: center;
 }
 
-/* Meetup times (nested)*/
+/* Meetup Times section */
 #times {
-    background: url("/assets/images/dublin-city.webp") no-repeat center/cover;
+    background: url('../images/dublin-city.webp') no-repeat center/cover;
+    /* Handles responsivity without the need for a media query */
     display: flex;
     flex-wrap: wrap;
-
-    & div {
-        color: #fafafa;
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 15px;
-        text-align: center;
-        /* Disable wrap on screens of less than 400px width.
-        Each div will expand to fill the available space on its row */
-        flex-basis: 200px;
-        flex-grow: 1;
-        /* Creates a grid of meetup time divs over the background image */
-        border: 2px solid white;
-    }
-
-    & h3 {
-        color: #fafafa;
-    }
 }
 
+#times div {
+    color: #fafafa;
+    background-color: rgba(0, 0, 0, .6);
+    padding: 15px;
+    text-align: center;
+    /* This will not wrap on screens of less than 400px wide.
+    Each div will expand to fill the available space on its row */
+    flex-basis: 200px;
+    flex-grow: 1;
+    /* Creates a grid of meetup time divs over the background image */
+    border: 2px solid white;
+}
+
+#times h3 {
+    /* Override the heading colour set in general styles */
+    color: #fafafa;
+}
 
 /* Footer */
 #social-networks {
@@ -187,54 +192,13 @@ main {
     padding: 20px 0;
     display: flex;
     justify-content: space-evenly;
-    list-style: none;
-
+    list-style-type: none;
 }
 
 #social-networks i {
     font-size: 160%;
     padding: 5%;
     color: #3a3a3a;
-}
-
-/* Menu styling */
-#menu {
-    list-style-type: none;
-    font-size: 110%;
-    letter-spacing: 4px;
-}
-
-#menu>li {
-    margin-bottom: 1em;
-}
-
-.active {
-    border-bottom: 1px solid #3a3a3a;
-}
-
-/* Navbar with dropdown toggle */
-nav {
-    position: absolute;
-    background-color: #FFFFFF;
-    width: 100%;
-    left: 0;
-    padding: 0 1rem;
-    box-shadow: 0 2px 2px #3a3a3a;
-    display: none;
-    top: 100%;
-}
-
-/* Nav toggle */
-#nav-toggle:checked~nav {
-    display: block;
-}
-
-#nav-toggle {
-    display: none;
-}
-
-.nav-toggle-label {
-    font-size: 2rem;
 }
 
 /* Media query: tablets and larger (768px and up) */
@@ -269,7 +233,8 @@ nav {
 
     /* Main content */
     main {
-        margin-top: 79px
+        /* Push main content down to accommodate larger header */
+        margin-top: 79px;
     }
 
     /* Hero */
@@ -277,25 +242,41 @@ nav {
         width: 300px;
         right: 50px;
     }
+
+    /* Reasons section */
+    #benefits-physical,
+    #benefits-mental {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #benefits-physical>div,
+    #benefits-mental>div {
+        width: 75%;
+    }
+
+    #benefits-mental>div {
+        text-align: end;
+        align-self: flex-end;
+    }
 }
 
-/* Media query: laptops and larger (992px and up) */
+/* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
     }
 }
 
-/* Media query: Large screens (1200px and up) */
-@media screen and (min-width: 1200px) {
-
+@media screen and (min-width: 1200px) {    
     /* Reasons section */
     #benefits {
         display: flex;
         flex-direction: row;
     }
 
-    #benefits>div {
+    #benefits > div {
         flex: 1;
     }
 
@@ -307,11 +288,11 @@ nav {
         order: 1;
     }
 
-    #benefits-mental>div {
+    #benefits-mental > div {
         align-self: flex-start;
     }
 
-    #benefits-physical>div {
+    #benefits-physical > div {
         align-self: flex-end;
     }
 }
