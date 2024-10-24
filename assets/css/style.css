@@ -33,11 +33,17 @@ body {
     color: #3a3a3a;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #252525;
+}
+
+.hidden-heading {
+    display: none;
 }
 
 /* Header */
@@ -75,7 +81,7 @@ main {
 
 #cover-text {
     /* Final rgba value sets the opacity so it is semi-transparent */
-    background-color: rgba(241,109,107,.7);
+    background-color: rgba(241, 109, 107, .7);
     font-size: 130%;
     position: absolute;
     bottom: 30px;
@@ -85,7 +91,8 @@ main {
     padding-left: 10px;
 }
 
-#cover-text > h2, #cover-text > h3 {
+#cover-text>h2,
+#cover-text>h3 {
     color: #ffffff;
 }
 
@@ -103,19 +110,21 @@ main {
 }
 
 /* Benefits */
-#benefits-physical, #benefits-mental {
+#benefits-physical,
+#benefits-mental {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-#benefits-physical > div, #benefits-mental > div {
+#benefits-physical>div,
+#benefits-mental>div {
     line-height: 20px;
     margin-bottom: 20px;
     width: 75%;
 }
 
-#benefits-mental > div {
+#benefits-mental>div {
     text-align: end;
     align-self: flex-end;
 }
@@ -155,7 +164,7 @@ main {
 
     & div {
         color: #fafafa;
-        background-color: rgba(0,0,0,0.6);
+        background-color: rgba(0, 0, 0, 0.6);
         padding: 15px;
         text-align: center;
         /* Disable wrap on screens of less than 400px width.
@@ -195,7 +204,7 @@ main {
     letter-spacing: 4px;
 }
 
-#menu > li {
+#menu>li {
     margin-bottom: 1em;
 }
 
@@ -230,6 +239,7 @@ nav {
 
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
+
     /* Header */
     nav {
         display: block;
@@ -243,7 +253,7 @@ nav {
         display: flex;
     }
 
-    #menu > li {
+    #menu>li {
         padding-left: 1rem;
     }
 
@@ -278,13 +288,14 @@ nav {
 
 /* Media query: Large screens (1200px and up) */
 @media screen and (min-width: 1200px) {
+
     /* Reasons section */
     #benefits {
         display: flex;
         flex-direction: row;
     }
 
-    #benefits > div {
+    #benefits>div {
         flex: 1;
     }
 
@@ -296,11 +307,11 @@ nav {
         order: 1;
     }
 
-    #benefits-mental > div {
+    #benefits-mental>div {
         align-self: flex-start;
     }
 
-    #benefits-physical > div {
+    #benefits-physical>div {
         align-self: flex-end;
     }
 }
